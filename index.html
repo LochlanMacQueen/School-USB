@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Ai part-->
+    <div class="container card">
+        <div class="row" id="status">Status: initializing...</div>
+
+        <div class="row">
+            <label for="model">Pick a model</label>
+            <select id="model">
+                <option value="Qwen2.5-0.5B-Instruct-q4f16_1-MLC">Qwen0.5b - tiny </option>
+                <option value="phi-2-q4f16_1-MLC">Phi-2 - small</option>
+                <option value="gemma-2b-it-q4f16_1-MLC">Gemma 2b (Instruct) - better</option>
+                <option value="Llama-3-8B-Instruct-q4f16_1-MLC">Llama 8b - heavier</option>
+                <option value="Qwen2.5-7B-Instruct-q4f16_1-MLC">Qwen7b - heavy</option>
+            </select>
+        </div>
+        <div class="row">
+            <label for="prompt">Your prompt:</label>
+            <textarea id="prompt" placeholder="Ask something... keep it short if using big models."></textarea>
+        </div>
+        <div class="row">
+            <button id="go">Run</button>
+        </div>
+        <div class="row">
+            <div id="out"></div>
+        </div>
+    </div>
+
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
