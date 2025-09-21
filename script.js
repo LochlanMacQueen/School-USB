@@ -48,7 +48,7 @@ async function ensureInit() {
   if (!webllm) throw new Error('web-llm not available');
 
   initializing = true;
-  const modelId = modelEl.value; // FIX: was ariaValueMax
+  const modelId = modelEl.value; 
   setOut('');
   setStatus(`Loading ${modelId}… (first time downloads; later runs work offline)`);
 
@@ -67,7 +67,7 @@ async function ensureInit() {
   } finally {
     initializing = false;
   }
-} // I might be missing a closing }
+} 
 
 //when run is clicked we load model
 goBtn.addEventListener('click', async () => {
@@ -83,7 +83,7 @@ goBtn.addEventListener('click', async () => {
     setOut('Thinking...');
 
     // ask the engine to create a completion, and request it as a stream
-    const stream = await engine.chat.completions.create({ // FIX: completions (plural)
+    const stream = await engine.chat.completions.create({ 
       messages: [{ role: 'user', content: q}],
       stream: true,
       temperature: 0.7,

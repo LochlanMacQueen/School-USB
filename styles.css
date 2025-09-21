@@ -1,47 +1,35 @@
-/* ===============================
-   AC Reynolds Theme — Full Styles
-   Palette + Poppins + Layout
-   =============================== */
 
-/* Import Poppins (weights for headings/buttons/body) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Global Reset / Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Root Variables (your palette + semantic aliases) */
 :root {
-  /* Brand palette */
   --black: #000000ff;
   --oxford-blue: #14213dff;
   --blue: #3A9DFF;
   --platinum: #e5e5e5ff;
   --white: #ffffffff;
+  --primary: var(--oxford-blue);     
+  --primary-contrast: var(--white);  
+  --secondary: var(--blue);    
+  --secondary-contrast: var(--black); 
+  --bg: var(--white);                 
+  --surface: #f8f9fb;                
+  --text: #fff;                   
+  --muted: #e3e3e3;              
+  --border: #dcdfe6;                
+  --focus: rgba(252, 163, 17, 0.25);  
 
-  /* Semantic tokens */
-  --primary: var(--oxford-blue);      /* headings, header bg, accents */
-  --primary-contrast: var(--white);   /* text on primary */
-  --secondary: var(--blue);     /* buttons, highlights */
-  --secondary-contrast: var(--black); /* text on secondary */
-  --bg: var(--white);                 /* page background */
-  --surface: #f8f9fb;                 /* subtle panel background */
-  --text: #fff;                    /* main body text */
-  --muted: #e3e3e3;                   /* secondary text */
-  --border: #dcdfe6;                  /* borders */
-  --focus: rgba(252, 163, 17, 0.25);  /* focus ring (orange-web, 25%) */
-
-  /* Layout/design */
   --radius: 12px;
   --radius-sm: 8px;
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
   --shadow: 0 8px 28px rgba(0,0,0,0.08);
   --container: 1000px;
 
-  /* Typography */
   --font: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --h1: 28px;
   --h2: 22px;
@@ -49,7 +37,6 @@
   --body: 16px;
 }
 
-/* Page */
 html, body { height: 100%; }
 body {
   background: radial-gradient(circle at top center, rgba(255,255,255, 0.3) 0%, rgba(0, 0, 0, 0) 25%), linear-gradient(to bottom, #111, #000);
@@ -66,7 +53,6 @@ body {
   grid-template-rows: 1fr 3fr 2fr;
 }
 
-/* Containers */
 .container {
   width: 100%;
   margin: 24px auto;
@@ -76,7 +62,6 @@ body {
   height: 100%;
 }
 
-/* Headings / Paragraphs */
 h1, h2, h3 {
   color: var(--primary);
   line-height: 1.2;
@@ -90,7 +75,6 @@ h3 { font-size: var(--h3); }
 p  { color: var(--text); margin: 0 0 12px; }
 .small { font-size: 13px; color: var(--muted); }
 
-/* Links */
 a {
   color: var(--secondary);
   text-decoration: none;
@@ -99,7 +83,6 @@ a {
 }
 a:hover { color: var(--primary); border-color: currentColor; }
 
-/* Brand / Header Bar */
 .brand-bar {
   background: linear-gradient(90deg, var(--primary) 60%, var(--secondary));
   color: var(--primary-contrast);
@@ -121,13 +104,12 @@ a:hover { color: var(--primary); border-color: currentColor; }
 }
 .brand-nav a:hover { text-decoration: underline; }
 
-/* Cards / Panels */
 .card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
   border-radius: var(--radius);
   padding: 16px;
 }
@@ -139,17 +121,15 @@ a:hover { color: var(--primary); border-color: currentColor; }
   padding: 16px;
 }
 
-/* Dividers */
 .hr {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border), transparent);
   margin: 16px 0 20px;
 }
 
-/* Form Rows */
+
 .row { margin: 12px 0; }
 
-/* Inputs / Textarea / Select */
 input, textarea, select {
   width: 100%;
   border: 1px solid var(--border);
@@ -171,7 +151,6 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 4px var(--focus);
 }
 
-/* Buttons */
 button, .btn {
   display: inline-flex;
   align-items: center;
