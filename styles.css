@@ -18,19 +18,19 @@
   /* Brand palette */
   --black: #000000ff;
   --oxford-blue: #14213dff;
-  --orange-web: #fca311ff;
+  --blue: #3A9DFF;
   --platinum: #e5e5e5ff;
   --white: #ffffffff;
 
   /* Semantic tokens */
   --primary: var(--oxford-blue);      /* headings, header bg, accents */
   --primary-contrast: var(--white);   /* text on primary */
-  --secondary: var(--orange-web);     /* buttons, highlights */
+  --secondary: var(--blue);     /* buttons, highlights */
   --secondary-contrast: var(--black); /* text on secondary */
   --bg: var(--white);                 /* page background */
   --surface: #f8f9fb;                 /* subtle panel background */
-  --text: #0f1522;                    /* main body text */
-  --muted: #5c6375;                   /* secondary text */
+  --text: #fff;                    /* main body text */
+  --muted: #e3e3e3;                   /* secondary text */
   --border: #dcdfe6;                  /* borders */
   --focus: rgba(252, 163, 17, 0.25);  /* focus ring (orange-web, 25%) */
 
@@ -52,7 +52,7 @@
 /* Page */
 html, body { height: 100%; }
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at top center, rgba(255,255,255, 0.3) 0%, rgba(0, 0, 0, 0) 25%), linear-gradient(to bottom, #111, #000);
   color: var(--text);
   font-family: var(--font);
   font-size: var(--body);
@@ -60,12 +60,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 3fr 2fr;
+}
 
 /* Containers */
 .container {
-  max-width: var(--container);
+  width: 100%;
   margin: 24px auto;
   padding: 0 16px;
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  height: 100%;
 }
 
 /* Headings / Paragraphs */
@@ -115,10 +123,12 @@ a:hover { color: var(--primary); border-color: currentColor; }
 
 /* Cards / Panels */
 .card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* soft shadow */
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
   padding: 16px;
 }
 .surface {
@@ -143,7 +153,9 @@ a:hover { color: var(--primary); border-color: currentColor; }
 input, textarea, select {
   width: 100%;
   border: 1px solid var(--border);
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--text);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
